@@ -1,5 +1,7 @@
 import { Request, Response } from 'express';
-import { createTask, getStats, getTasks, updateTask } from '../services/task.service';
+import {
+  createTask, getStats, getTasks, updateTask
+} from '../services/task.service';
 import { PaginationQueryData } from '../types/request.type';
 
 export const getAllTasks = async (req: Request<{}, {}, {}, PaginationQueryData>, res: Response) => {

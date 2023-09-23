@@ -1,4 +1,4 @@
-import { TaskStatus } from "../entities/Task"
+import { TaskStatus } from '../entities/Task';
 
 export interface CreateTaskBody {
     title: string
@@ -10,4 +10,4 @@ export interface UpdateTaskBody {
     status?: TaskStatus
 }
 
-export interface GetStatsFilter { date?: Date };
+export interface GetStatsFilter { date?: Date }

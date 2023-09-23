@@ -11,13 +11,13 @@ export enum TaskStatus {
 export class Task extends Base {
   @Column({
     length: 100
-  })
-  title: string;
+    })
+    title: string;
 
   @Column({
     length: 100,
     nullable: true,
     default: TaskStatus.OPEN
-  })
-  status: string;
+    })
+    status: string;
 }

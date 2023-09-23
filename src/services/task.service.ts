@@ -1,19 +1,21 @@
 import { getRepository } from 'typeorm';
 import { Task, TaskStatus } from '../entities/Task';
-import { CreateTaskBody, GetStatsFilter, UpdateTaskBody } from '../types/task.type';
+import { CreateTaskBody, UpdateTaskBody } from '../types/task.type';
 import { BadRequestError } from '../errors/bad-request.error';
 
 export const getTasks = async (skip: number, take: number) => {
   const taskRepository = getRepository(Task);
   const [tasks, total] = await taskRepository.findAndCount({
-    skip, take, order: {
+    skip,
+    take,
+    order: {
       createdAt: 'DESC'
     }
   });
   return {
     tasks,
     total
-  }
+  };
 };
 
 export const createTask = async (params: CreateTaskBody) => {
@@ -64,7 +66,7 @@ export const getStats = async () => {
       inprogress_tasks: parseInt(result.inprogress_tasks),
       completed_tasks: parseInt(result.completed_tasks),
     },
-  }))
+  }));
 
-  return resultWithMonthNames
+  return resultWithMonthNames;
 };
