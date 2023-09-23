@@ -16,6 +16,7 @@ const statusValidator = body('status').optional().trim().notEmpty()
   .bail()
   .isIn(Object.values(TaskStatus))
   .withMessage(`Invalid status, expected - ${Object.values(TaskStatus).join(', ')}`);
+  
 export const createTaskValidator = [
   taskValidator,
   ...validateRequest
