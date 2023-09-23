@@ -1,13 +1,13 @@
 import { Router } from 'express';
 import {
-  createATask, getAllTasks, getTaskStats, updateATask
+  createTask, getTasks, getTaskStats, updateATask
 } from '../controllers/task.controller';
 import { createTaskValidator, updateTaskValidator } from '../validators/task.validator';
 
 const router = Router();
 
-router.get('/all', getAllTasks);
-router.post('/create', createTaskValidator, createATask);
+router.get('/all', getTasks);
+router.post('/create', createTaskValidator, createTask);
 router.patch('/update/:id', updateTaskValidator, updateATask);
 router.get('/stats', getTaskStats);
 

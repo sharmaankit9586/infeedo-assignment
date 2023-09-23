@@ -3,7 +3,7 @@ import { Task, TaskStatus } from '../entities/Task';
 import { CreateTaskBody, UpdateTaskBody } from '../types/task.type';
 import { BadRequestError } from '../errors/bad-request.error';
 
-export const getTasks = async (skip: number, take: number) => {
+export const getTasksWithPagination = async (skip: number, take: number) => {
   const taskRepository = getRepository(Task);
   const [tasks, total] = await taskRepository.findAndCount({
     skip,
@@ -18,7 +18,7 @@ export const getTasks = async (skip: number, take: number) => {
   };
 };
 
-export const createTask = async (params: CreateTaskBody) => {
+export const createTaskByTitle = async (params: CreateTaskBody) => {
   const { title } = params;
   const taskRepository = getRepository(Task);
   const newTask = taskRepository.create({
@@ -27,7 +27,7 @@ export const createTask = async (params: CreateTaskBody) => {
   return taskRepository.save(newTask);
 };
 
-export const updateTask = async (params: UpdateTaskBody) => {
+export const updateTaskById = async (params: UpdateTaskBody) => {
   const { id, title, status } = params;
   const taskRepository = getRepository(Task);
   const task = await taskRepository.findOne({
@@ -44,7 +44,7 @@ export const updateTask = async (params: UpdateTaskBody) => {
   return task;
 };
 
-export const getStats = async () => {
+export const getStatsGroupedMonthly = async () => {
   const taskRepository = getRepository(Task);
 
   const results = await taskRepository
