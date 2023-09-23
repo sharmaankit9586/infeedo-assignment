@@ -10,6 +10,8 @@ Make sure you have docker installed in your machine
 ```
 **Exposed Port** - 8081
 
+**Go to http://localhost:8081**
+
 ## Implementation
 **Tech Stack Used** - Node.js, Typescript, Postgres, TypeORM, Docker.
 
