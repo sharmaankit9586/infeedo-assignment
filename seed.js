@@ -29,8 +29,6 @@ for (let i = 0; i < count; i++) {
 
   axios.post(apiUrlCreate, createPayload)
     .then(createResponse => {
-
-      // Extract the id from the first API call response
       const id = createResponse.data.id;
       const title = createResponse.data.title;
 
