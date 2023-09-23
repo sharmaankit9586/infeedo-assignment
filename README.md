@@ -12,6 +12,13 @@ Make sure you have docker installed in your machine
 
 **Go to http://localhost:8081**
 
+**To seed random data, use below command**
+
+```
+ node seed.js 50
+```
+This will add 50 random tasks to the database. (Modify the)
+
 ## Implementation
 **Tech Stack Used** - Node.js, Typescript, Postgres, TypeORM, Docker.
 
