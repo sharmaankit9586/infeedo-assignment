@@ -17,7 +17,7 @@ Make sure you have docker installed in your machine
 ```
  node seed.js 50
 ```
-This will add 50 random tasks to the database. (Modify the)
+This will add 50 random tasks to the database. (Modify the API url in seed.js if not running in a local environment)
 
 ## Implementation
 **Tech Stack Used** - Node.js, Typescript, Postgres, TypeORM, Docker.
